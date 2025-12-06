@@ -8,6 +8,8 @@ import os
 import time
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from typing import Optional
 from contextlib import asynccontextmanager
@@ -32,7 +34,13 @@ async def lifespan(app: FastAPI):
             anthropic_api_key=config.ANTHROPIC_API_KEY,
             spoonos_endpoint=config.SPOON_OS_ENDPOINT
         )
-        print("✅ UserAgent initialized")
+        
+        # Initialize SpoonOS integration
+        try:
+            await user_agent_instance.initialize_spoonos()
+            print("✅ UserAgent initialized with SpoonOS integration")
+        except Exception as e:
+            print(f"⚠️  UserAgent initialized but SpoonOS integration failed: {e}")
     else:
         print("⚠️  UserAgent not initialized - missing ANTHROPIC_API_KEY")
     
@@ -59,6 +67,30 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Serve static files from UI directory
+app.mount("/static", StaticFiles(directory="UI"), name="static")
+
+# Serve frontend pages
+@app.get("/")
+async def serve_index():
+    """Serve the main landing page"""
+    return FileResponse("UI/index.html")
+
+@app.get("/playground.html")
+async def serve_playground():
+    """Serve the interactive playground page"""
+    return FileResponse("UI/playground.html")
+
+@app.get("/styles.css")
+async def serve_styles():
+    """Serve CSS styles"""
+    return FileResponse("UI/styles.css", media_type="text/css")
+
+@app.get("/playground.js")
+async def serve_playground_js():
+    """Serve playground JavaScript"""
+    return FileResponse("UI/playground.js", media_type="application/javascript")
 
 # Request/Response models
 class UserQuery(BaseModel):
@@ -170,10 +202,10 @@ if __name__ == "__main__":
     host = os.getenv("HOST", "0.0.0.0")
     
     print(f"🚀 Starting Web3 Toolbox Agent on {host}:{port}")
-    print("📡 UserAgent endpoint: /api/user-agent/query")
-    print("🔧 SpoonOS endpoint: /api/spoonos/execute (coming soon)")
-    print("💬 Unified chat: /api/chat")
-    print("🏥 Health check: /health")
+    print(f"🌐 Frontend: http://{host}:{port}/")
+    print(f"🎮 Playground: http://{host}:{port}/playground.html")
+    print(f"💬 API: http://{host}:{port}/api/chat")
+    print(f"🏥 Health: http://{host}:{port}/health")
     
     uvicorn.run(
         "main:app",
