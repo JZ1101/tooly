@@ -1,0 +1,43 @@
+[project]
+name = "web3-toolbox-agent"
+version = "1.0.0"
+description = "AI-powered Web3 customer service agent with dual-agent architecture"
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    # Core framework - updated versions for compatibility
+    "fastapi>=0.104.1",
+    "uvicorn[standard]>=0.32.0",
+    "python-dotenv>=1.0.0", 
+    "pydantic>=2.5.0",
+    
+    # AI/LLM dependencies
+    "langchain>=0.1.0",
+    "langchain-anthropic>=0.1.1",
+    "langchain-community>=0.1.0",
+    
+    # SpoonOS Web3 Tools
+    "spoon-ai-sdk>=0.3.4",
+    "spoon-toolkits>=0.2.2",
+    
+    # Additional utilities
+    "requests>=2.31.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=7.0.0",
+    "pytest-asyncio>=0.21.0",
+    "httpx>=0.24.0",
+]
+
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["userAgent*", "spoonOS*"]
+
+[project.scripts]
+web3-agent = "main:main"
