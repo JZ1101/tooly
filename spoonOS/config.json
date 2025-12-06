@@ -8,7 +8,11 @@
   },
   "tool_categories": {
     "enabled": [
-      "CRYPTO_DATA"
+      "CRYPTO_DATA",
+      "CRYPTO_POWERDATA",
+      "CRYPTO_EVM",
+      "CRYPTO_NEO",
+      "GITHUB"
     ],
     "auto_load": true,
     "available": [
@@ -34,13 +38,21 @@
     "required_variables": [
       "BITQUERY_CLIENT_ID",
       "BITQUERY_CLIENT_SECRET",
-      "RPC_URL"
+      "RPC_URL",
+      "OKX_API_KEY",
+      "OKX_SECRET_KEY",
+      "OKX_API_PASSPHRASE",
+      "NEO_MAINNET_RPC",
+      "GITHUB_TOKEN"
     ],
     "optional_variables": [
       "BITQUERY_API_KEY",
-      "OKX_API_KEY",
-      "OKX_SECRET_KEY",
-      "OKX_API_PASSPHRASE"
+      "OKX_PROJECT_ID",
+      "OKX_BASE_URL",
+      "NEO_TESTNET_RPC",
+      "NEO_RPC_TIMEOUT",
+      "WEB3_PROVIDER_URL",
+      "PRIVATE_KEY"
     ]
   },
   "features": {
@@ -54,12 +66,12 @@
       "get_token_price": {
         "enabled": true,
         "timeout": 30.0,
-        "description": "Get real-time token prices from DEX"
+        "description": "Get real-time token prices from DEX (Uniswap)"
       },
       "get_24h_stats": {
         "enabled": true,
         "timeout": 30.0,
-        "description": "Get 24-hour trading statistics"
+        "description": "Get 24-hour trading statistics (volume, price change)"
       },
       "get_kline_data": {
         "enabled": true,
@@ -85,6 +97,84 @@
         "enabled": true,
         "timeout": 45.0,
         "description": "Monitor DeFi lending rates across platforms"
+      }
+    },
+    "crypto_powerdata": {
+      "crypto_powerdata_cex": {
+        "enabled": true,
+        "timeout": 45.0,
+        "description": "Fetch OHLCV data from centralized exchanges (Binance, OKX, etc.) with technical indicators"
+      },
+      "crypto_powerdata_dex": {
+        "enabled": true,
+        "timeout": 45.0,
+        "description": "Retrieve decentralized exchange data via OKX Web3 API"
+      },
+      "crypto_powerdata_indicators": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "List and calculate technical indicators (RSI, MACD, Bollinger Bands, EMA, SMA, etc.)"
+      }
+    },
+    "crypto_evm": {
+      "evm_transfer": {
+        "enabled": true,
+        "timeout": 60.0,
+        "description": "Execute native ETH transfers on EVM chains"
+      },
+      "evm_erc20_transfer": {
+        "enabled": true,
+        "timeout": 60.0,
+        "description": "Handle ERC-20 token transfers with approval checks"
+      },
+      "evm_balance": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Query native token and ERC-20 balances on EVM chains"
+      },
+      "evm_swap": {
+        "enabled": true,
+        "timeout": 90.0,
+        "description": "Execute token swaps via DEX aggregators (Bebop/1inch)"
+      },
+      "evm_swap_quote": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Fetch optimal swap routes and expected output amounts"
+      },
+      "evm_bridge": {
+        "enabled": true,
+        "timeout": 90.0,
+        "description": "Facilitate cross-chain asset transfers via LiFi protocol"
+      }
+    },
+    "crypto_neo": {
+      "neo_address_info": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Retrieve complete Neo address information including assets and transactions"
+      },
+      "neo_validate_address": {
+        "enabled": true,
+        "timeout": 15.0,
+        "description": "Validate Neo address format and checksum"
+      }
+    },
+    "github": {
+      "github_issues": {
+        "enabled": true,
+        "timeout": 45.0,
+        "description": "Retrieve GitHub issues with filters for state, labels, and date range"
+      },
+      "github_pull_requests": {
+        "enabled": true,
+        "timeout": 45.0,
+        "description": "Fetch GitHub PRs with merge status and review information"
+      },
+      "github_commits": {
+        "enabled": true,
+        "timeout": 45.0,
+        "description": "Retrieve commit logs with author, message, and diff statistics"
       }
     }
   },
