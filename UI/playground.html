@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive playground for Web3 Toolbox Agent">
+    <title>Playground | Web3 Toolbox Agent</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <main id="main-content" role="main">
+        <div class="container">
+            <header class="page-header">
+                <h1>Web3 Toolbox Agent</h1>
+                <nav aria-label="Breadcrumb">
+                    <a href="index.html" class="back-link">
+                        <span aria-hidden="true">←</span>
+                        <span>Back to home</span>
+                    </a>
+                </nav>
+            </header>
+
+            <section class="playground-section" aria-labelledby="playground-heading">
+                <h2 id="playground-heading" class="visually-hidden">Chat Interface</h2>
+                
+                <div class="chat-interface" role="region" aria-label="Chat messages">
+                    <div class="messages-container" id="messages" role="log" aria-live="polite" aria-atomic="false">
+                        <div class="message agent" role="article">
+                            <p>Ask me about Web3: balances, transactions, gas fees, smart contracts, token swaps, NFTs.</p>
+                        </div>
+                    </div>
+
+                    <form class="input-container" aria-label="Send message">
+                        <label for="messageInput" class="visually-hidden">Enter your message</label>
+                        <input 
+                            type="text" 
+                            class="message-input" 
+                            id="messageInput" 
+                            name="message"
+                            placeholder="What's my ETH balance?"
+                            maxlength="500"
+                            aria-describedby="char-count"
+                            required
+                        >
+                        <span id="char-count" class="char-count" aria-live="polite">0/500</span>
+                        <button type="submit" class="send-btn" id="sendBtn" aria-label="Send message">
+                            Send
+                        </button>
+                    </form>
+                </div>
+
+                <div class="examples" role="navigation" aria-label="Example queries">
+                    <h3 class="visually-hidden">Quick examples</h3>
+                    <button type="button" class="example-query" data-query="What's my ETH balance?">What's my ETH balance?</button>
+                    <button type="button" class="example-query" data-query="How much would it cost to send 1 ETH?">How much to send 1 ETH?</button>
+                    <button type="button" class="example-query" data-query="Show me my recent transactions">Recent transactions</button>
+                    <button type="button" class="example-query" data-query="What NFTs do I own?">My NFTs</button>
+                    <button type="button" class="example-query" data-query="Explain how gas fees work">How do gas fees work?</button>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="playground.js"></script>
+</body>
+</html>
+                </div>
+                <div class="footer-text">
+                    Built for the spoonAI hackathon 🥄
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="playground.js"></script>
+</body>
+</html>
