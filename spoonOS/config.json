@@ -1,0 +1,98 @@
+{
+  "agent": {
+    "name": "SpoonOS-Agent",
+    "version": "1.0.0",
+    "description": "Tool execution agent for Web3 operations",
+    "default_timeout": 30.0,
+    "log_level": "INFO"
+  },
+  "tool_categories": {
+    "enabled": [
+      "CRYPTO_DATA"
+    ],
+    "auto_load": true,
+    "available": [
+      "CRYPTO_DATA",
+      "CRYPTO_EVM",
+      "CRYPTO_NEO",
+      "CRYPTO_SOLANA",
+      "CRYPTO_POWERDATA",
+      "DATA_PLATFORMS",
+      "GITHUB",
+      "SOCIAL_MEDIA",
+      "STORAGE",
+      "MEMORY"
+    ]
+  },
+  "execution": {
+    "parallel_max_workers": 5,
+    "retry_attempts": 3,
+    "retry_delay": 1.0,
+    "timeout_seconds": 30.0
+  },
+  "environment": {
+    "required_variables": [
+      "BITQUERY_CLIENT_ID",
+      "BITQUERY_CLIENT_SECRET",
+      "RPC_URL"
+    ],
+    "optional_variables": [
+      "BITQUERY_API_KEY",
+      "OKX_API_KEY",
+      "OKX_SECRET_KEY",
+      "OKX_API_PASSPHRASE"
+    ]
+  },
+  "features": {
+    "enable_health_check": true,
+    "enable_tool_discovery": true,
+    "enable_batch_execution": true,
+    "enable_parallel_execution": true
+  },
+  "tools": {
+    "crypto_data": {
+      "get_token_price": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Get real-time token prices from DEX"
+      },
+      "get_24h_stats": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Get 24-hour trading statistics"
+      },
+      "get_kline_data": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Get K-line/candlestick data for technical analysis"
+      },
+      "price_threshold_alert": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Monitor price thresholds and generate alerts"
+      },
+      "lp_range_check": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Check liquidity provider position ranges"
+      },
+      "sudden_price_increase": {
+        "enabled": true,
+        "timeout": 30.0,
+        "description": "Detect sudden price increases and potential opportunities"
+      },
+      "lending_rate_monitor": {
+        "enabled": true,
+        "timeout": 45.0,
+        "description": "Monitor DeFi lending rates across platforms"
+      }
+    }
+  },
+  "logging": {
+    "format": "%(asctime)s - %(name)s - %(levelname)s - %(message)s",
+    "date_format": "%Y-%m-%d %H:%M:%S",
+    "file_output": false,
+    "file_path": "spoonos_agent.log",
+    "console_output": true
+  }
+}

@@ -1,0 +1,10 @@
+[project]
+name = "web3-toolbox-agent"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.13"
+dependencies = [
+    "spoon-ai-sdk>=0.3.4",
+    "spoon-toolkits>=0.2.2",
+]
