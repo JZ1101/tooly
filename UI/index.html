@@ -3,172 +3,39 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Web3 Toolbox Agent | AI-Powered Web3 Customer Service</title>
+    <meta name="description" content="AI-powered Web3 assistant for blockchain operations">
+    <title>Web3 Toolbox Agent</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="logo">🛠️</span>
-                <span class="brand-text">Web3 Toolbox Agent</span>
-            </div>
-            <div class="nav-links">
-                <a href="#features">Features</a>
-                <a href="#demo">Demo</a>
-                <a href="playground.html" class="btn-primary">Try Playground</a>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <section class="hero">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <main id="main-content" role="main">
         <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    AI-Powered Web3 Customer Service
-                    <span class="highlight">That Actually Works</span>
-                </h1>
-                <p class="hero-description">
-                    Transform Web3 complexity into simple conversations. Our dual-agent architecture combines Claude's intelligence with blockchain execution to provide seamless customer support.
-                </p>
-                <div class="hero-actions">
-                    <a href="playground.html" class="btn-primary large">Try the Playground</a>
-                    <a href="#demo" class="btn-secondary large">See Demo</a>
-                </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number">7+</span>
-                        <span class="stat-label">Web3 Actions</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">95%</span>
-                        <span class="stat-label">Intent Accuracy</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number">2</span>
-                        <span class="stat-label">Agent Architecture</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
+            <header class="page-header">
+                <h1>Web3 Toolbox Agent</h1>
+                <p class="subtitle">AI-powered Web3 assistant. Natural language to blockchain execution.</p>
+            </header>
 
-    <!-- Features Section -->
-    <section id="features" class="features">
-        <div class="container">
-            <h2 class="section-title">Built for Web3 Reality</h2>
-            <div class="features-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">🧠</div>
-                    <h3>Smart Intent Recognition</h3>
-                    <p>Powered by Claude 3.5, understands complex Web3 queries and routes them intelligently between AI chat and blockchain execution.</p>
+            <section class="info-section" aria-labelledby="info-heading">
+                <h2 id="info-heading" class="visually-hidden">Features</h2>
+                <div class="info-grid">
+                    <article class="info-card">
+                        <h3>What it does</h3>
+                        <p>Converts natural language queries into Web3 operations. Check balances, estimate gas, view transactions, interact with smart contracts.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>How it works</h3>
+                        <p>Dual-agent architecture. Claude 3.5 handles intent classification. SpoonOS executes blockchain operations.</p>
+                    </article>
+                    <article class="info-card">
+                        <h3>Try it</h3>
+                        <p><a href="playground.html" class="cta-link">Open Playground <span aria-hidden="true">→</span></a></p>
+                    </article>
                 </div>
-                <div class="feature-card">
-                    <div class="feature-icon">⛓️</div>
-                    <h3>Multi-Chain Support</h3>
-                    <p>Ethereum, Polygon, and more. Check balances, estimate gas, view transactions across all major blockchain networks.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🚀</div>
-                    <h3>Dual-Agent Architecture</h3>
-                    <p>UserAgent handles AI conversations, SpoonOS executes blockchain operations. Best of both worlds in one system.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">💬</div>
-                    <h3>Natural Conversations</h3>
-                    <p>"What's my ETH balance?" → Real blockchain data. No complex commands or technical knowledge required.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">🔧</div>
-                    <h3>Developer-First API</h3>
-                    <p>RESTful endpoints, clear documentation, and easy integration. Built for teams that ship fast.</p>
-                </div>
-                <div class="feature-card">
-                    <div class="feature-icon">📊</div>
-                    <h3>Real-Time Data</h3>
-                    <p>Live blockchain data, gas estimates, transaction status. Always up-to-date information for your users.</p>
-                </div>
-            </div>
+            </section>
         </div>
-    </section>
-
-    <!-- Demo Section -->
-    <section id="demo" class="demo">
-        <div class="container">
-            <h2 class="section-title">See It In Action</h2>
-            <div class="demo-container">
-                <div class="chat-demo">
-                    <div class="chat-header">
-                        <div class="chat-title">Web3 Toolbox Agent</div>
-                        <div class="status-indicator online">Online</div>
-                    </div>
-                    <div class="chat-messages">
-                        <div class="message user">What's my ETH balance?</div>
-                        <div class="message agent">
-                            <div class="thinking">🧠 Analyzing request...</div>
-                            Based on the blockchain data, your ETH balance is <strong>2.5 ETH</strong> ($4,250 USD). 
-                            <br><br>
-                            Would you like me to show your recent transactions or estimate gas fees for a transfer?
-                        </div>
-                        <div class="message user">How much would it cost to send 1 ETH?</div>
-                        <div class="message agent">
-                            <div class="thinking">⛽ Estimating gas fees...</div>
-                            Current gas estimate for sending 1 ETH:
-                            <div class="gas-estimate">
-                                <div class="gas-row">
-                                    <span>🚀 Fast (30 sec)</span>
-                                    <span><strong>$12.50</strong></span>
-                                </div>
-                                <div class="gas-row">
-                                    <span>⚡ Standard (2 min)</span>
-                                    <span><strong>$8.75</strong></span>
-                                </div>
-                                <div class="gas-row">
-                                    <span>🐌 Slow (5+ min)</span>
-                                    <span><strong>$6.25</strong></span>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="demo-actions">
-                <a href="playground.html" class="btn-primary">Try It Yourself</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta">
-        <div class="container">
-            <div class="cta-content">
-                <h2>Ready to Transform Your Web3 Customer Experience?</h2>
-                <p>Join the future of Web3 customer service. Set up in minutes, not hours.</p>
-                <div class="cta-actions">
-                    <a href="playground.html" class="btn-primary large">Start Building</a>
-                    <a href="https://github.com/your-repo/web3-toolbox-agent" class="btn-secondary large">View on GitHub</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="logo">🛠️</span>
-                    <span class="brand-text">Web3 Toolbox Agent</span>
-                </div>
-                <div class="footer-text">
-                    Built for the spoonAI hackathon 🥄
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <script src="script.js"></script>
+    </main>
 </body>
 </html>

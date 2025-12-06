@@ -3,101 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Interactive playground for Web3 Toolbox Agent">
     <title>Playground | Web3 Toolbox Agent</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navigation -->
-    <nav class="nav">
-        <div class="nav-container">
-            <div class="nav-brand">
-                <span class="logo">🛠️</span>
-                <span class="brand-text">Web3 Toolbox Agent</span>
-            </div>
-            <div class="nav-links">
-                <a href="index.html">Home</a>
-                <a href="index.html#features">Features</a>
-                <a href="index.html#demo">Demo</a>
-                <span class="btn-primary">Playground</span>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Playground Section -->
-    <section class="playground">
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    
+    <main id="main-content" role="main">
         <div class="container">
-            <div class="playground-container">
-                <div class="playground-header">
-                    <h1>Web3 Agent Playground</h1>
-                    <p>Test our AI-powered Web3 agent with natural language queries. Try asking about balances, transactions, gas fees, and more!</p>
-                </div>
+            <header class="page-header">
+                <h1>Web3 Toolbox Agent</h1>
+                <nav aria-label="Breadcrumb">
+                    <a href="index.html" class="back-link">
+                        <span aria-hidden="true">←</span>
+                        <span>Back to home</span>
+                    </a>
+                </nav>
+            </header>
 
-                <!-- Chat Interface -->
-                <div class="playground-interface">
-                    <div class="chat-interface">
-                        <div class="chat-header">
-                            <div class="chat-title">Web3 Toolbox Agent</div>
-                            <div class="status-indicator online" id="status">Online</div>
-                        </div>
-                        
-                        <div class="messages-container" id="messages">
-                            <div class="message agent">
-                                👋 Hello! I'm your Web3 assistant. I can help you with:
-                                <br><br>
-                                • Check token balances<br>
-                                • View transaction history<br>
-                                • Estimate gas fees<br>
-                                • Smart contract interactions<br>
-                                • Token swaps<br>
-                                • NFT information<br>
-                                • General Web3 questions
-                                <br><br>
-                                What would you like to know?
-                            </div>
-                        </div>
-
-                        <div class="input-container">
-                            <input 
-                                type="text" 
-                                class="message-input" 
-                                id="messageInput" 
-                                placeholder="Ask anything about Web3..."
-                                maxlength="500"
-                            >
-                            <button class="send-btn" id="sendBtn">Send</button>
+            <section class="playground-section" aria-labelledby="playground-heading">
+                <h2 id="playground-heading" class="visually-hidden">Chat Interface</h2>
+                
+                <div class="chat-interface" role="region" aria-label="Chat messages">
+                    <div class="messages-container" id="messages" role="log" aria-live="polite" aria-atomic="false">
+                        <div class="message agent" role="article">
+                            <p>Ask me about Web3: balances, transactions, gas fees, smart contracts, token swaps, NFTs.</p>
                         </div>
                     </div>
 
-                    <!-- Example Queries -->
-                    <div class="examples">
-                        <h3>Try these examples:</h3>
-                        <div class="example-queries">
-                            <span class="example-query" data-query="What's my ETH balance?">What's my ETH balance?</span>
-                            <span class="example-query" data-query="How much would it cost to send 1 ETH?">How much would it cost to send 1 ETH?</span>
-                            <span class="example-query" data-query="Show me my recent transactions">Show me my recent transactions</span>
-                            <span class="example-query" data-query="What NFTs do I own?">What NFTs do I own?</span>
-                            <span class="example-query" data-query="Explain how gas fees work">Explain how gas fees work</span>
-                            <span class="example-query" data-query="What's the price of Bitcoin?">What's the price of Bitcoin?</span>
-                        </div>
-                    </div>
+                    <form class="input-container" aria-label="Send message">
+                        <label for="messageInput" class="visually-hidden">Enter your message</label>
+                        <input 
+                            type="text" 
+                            class="message-input" 
+                            id="messageInput" 
+                            name="message"
+                            placeholder="What's my ETH balance?"
+                            maxlength="500"
+                            aria-describedby="char-count"
+                            required
+                        >
+                        <span id="char-count" class="char-count" aria-live="polite">0/500</span>
+                        <button type="submit" class="send-btn" id="sendBtn" aria-label="Send message">
+                            Send
+                        </button>
+                    </form>
                 </div>
 
-                <!-- API Info -->
-                <div style="margin-top: 3rem; text-align: center; color: #666;">
-                    <p><strong>Developer Info:</strong> This playground connects to <code>http://localhost:8000/api/chat</code></p>
-                    <p>Make sure your backend server is running to test live functionality.</p>
+                <div class="examples" role="navigation" aria-label="Example queries">
+                    <h3 class="visually-hidden">Quick examples</h3>
+                    <button type="button" class="example-query" data-query="What's my ETH balance?">What's my ETH balance?</button>
+                    <button type="button" class="example-query" data-query="How much would it cost to send 1 ETH?">How much to send 1 ETH?</button>
+                    <button type="button" class="example-query" data-query="Show me my recent transactions">Recent transactions</button>
+                    <button type="button" class="example-query" data-query="What NFTs do I own?">My NFTs</button>
+                    <button type="button" class="example-query" data-query="Explain how gas fees work">How do gas fees work?</button>
                 </div>
-            </div>
+            </section>
         </div>
-    </section>
+    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-brand">
-                    <span class="logo">🛠️</span>
-                    <span class="brand-text">Web3 Toolbox Agent</span>
+    <script src="playground.js"></script>
+</body>
+</html>
                 </div>
                 <div class="footer-text">
                     Built for the spoonAI hackathon 🥄
