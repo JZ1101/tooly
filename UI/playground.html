@@ -10,17 +10,31 @@
 <body>
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
+
+    <!-- Ambient animation layers -->
+    <div class="intro-veil" aria-hidden="true">
+        <span class="intro-veil__beam"></span>
+        <span class="intro-veil__beam delay-1"></span>
+        <span class="intro-veil__beam delay-2"></span>
+    </div>
+    <div class="halo halo-top" aria-hidden="true"></div>
+    <div class="halo halo-bottom" aria-hidden="true"></div>
+    <div class="orb orb-left" aria-hidden="true"></div>
+    <div class="orb orb-right" aria-hidden="true"></div>
     
     <main id="main-content" role="main">
         <div class="container">
-            <header class="page-header">
-                <h1>Tooly · Powered by SpoonOS</h1>
-                <nav aria-label="Breadcrumb">
-                    <a href="/" class="back-link">
-                        <span aria-hidden="true">←</span>
-                        <span>Back to home</span>
-                    </a>
-                </nav>
+            <header class="hero hero-minimal playground-hero">
+                <div class="hero-content">
+                    <p class="eyebrow">Tooly Playground</p>
+                    <h1>Experiment with the Web3-native agent.</h1>
+                    <p class="lead">Ask Tooly about balances, gas, swaps, NFT state, or any SpoonOS-managed tool flow.</p>
+                    <div class="hero-actions">
+                        <a href="/" class="btn secondary" aria-label="Return to landing page">Back to home</a>
+                        <a href="index.html#why" class="btn tertiary" aria-label="Learn more about Tooly">Why Tooly</a>
+                    </div>
+                    <div class="status-pill" id="status" role="status" aria-live="polite">Checking status…</div>
+                </div>
             </header>
 
             <section class="playground-section" aria-labelledby="playground-heading">
@@ -42,10 +56,8 @@
                             name="message"
                             placeholder="What's my ETH balance?"
                             maxlength="500"
-                            aria-describedby="char-count"
                             required
                         >
-                        <span id="char-count" class="char-count" aria-live="polite">0/500</span>
                         <button type="submit" class="send-btn" id="sendBtn" aria-label="Send message">
                             Send
                         </button>
@@ -64,6 +76,11 @@
         </div>
     </main>
 
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('page-loaded');
+        });
+    </script>
     <script src="playground.js"></script>
 </body>
 </html>

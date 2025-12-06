@@ -113,7 +113,11 @@ body.page-loaded {
 .container {
     max-width: 1140px;
     margin: 0 auto;
-    padding: clamp(48px, 8vw, 120px) clamp(16px, 4vw, 40px) 140px;
+    padding: clamp(48px, 8vw, 120px) clamp(16px, 4vw, 40px) clamp(32px, 4vw, 64px);
+}
+
+.container > :last-child {
+    margin-bottom: 0;
 }
 
 /* Ambient glow */
@@ -805,6 +809,27 @@ body.page-loaded {
     color: var(--color-text-secondary);
 }
 
+.site-footer {
+    margin-top: clamp(24px, 6vw, 64px);
+    padding: clamp(32px, 8vw, 72px) clamp(16px, 6vw, 40px) clamp(48px, 10vw, 80px);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.35rem;
+    text-align: center;
+    font-size: clamp(0.95rem, 1.8vw, 1.0625rem);
+    color: var(--color-text-secondary);
+    line-height: 1.5;
+    background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+}
+
+.site-footer p {
+    margin: 0;
+    max-width: min(52ch, 90vw);
+    overflow-wrap: anywhere;
+}
+
 /* Shared page header (used on playground) */
 
 .page-header {
@@ -954,21 +979,6 @@ body.page-loaded {
     outline-offset: 2px;
 }
 
-.char-count {
-    position: absolute;
-    bottom: var(--space-3);
-    left: calc(var(--space-3) + var(--space-2));
-    font-size: 0.75rem;
-    color: var(--color-text-tertiary);
-}
-
-@media (min-width: 768px) {
-    .char-count {
-        bottom: var(--space-4);
-        left: calc(var(--space-4) + var(--space-2));
-    }
-}
-
 .send-btn {
     padding: 12px var(--space-3);
     background: var(--color-accent);
@@ -1062,7 +1072,7 @@ body.page-loaded {
 
 @media (max-width: 960px) {
     .container {
-        padding: clamp(40px, 9vw, 90px) clamp(16px, 6vw, 32px) 110px;
+        padding: clamp(36px, 9vw, 72px) clamp(16px, 6vw, 32px) clamp(28px, 7vw, 54px);
     }
 
     .hero {
@@ -1094,7 +1104,8 @@ body.page-loaded {
 
 @media (max-width: 640px) {
     .container {
-        padding-top: clamp(32px, 12vw, 72px);
+        padding-top: clamp(32px, 12vw, 60px);
+        padding-bottom: clamp(24px, 10vw, 48px);
     }
 
     .hero h1 {
@@ -1144,10 +1155,5 @@ body.page-loaded {
     
     .message {
         max-width: 90%;
-    }
-    
-    .char-count {
-        position: static;
-        margin-bottom: var(--space-1);
     }
 }
