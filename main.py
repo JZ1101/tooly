@@ -5,6 +5,7 @@ Hosts both UserAgent and SpoonOS agents
 
 import asyncio
 import os
+import time
 from fastapi import FastAPI, HTTPException
 from fastapi.middleware.cors import CORSMiddleware
 from pydantic import BaseModel
@@ -92,12 +93,15 @@ async def query_user_agent(request: UserQuery):
         )
     
     try:
-        response = await user_agent_instance.process_query(request.query)
+        # Generate session ID if not provided
+        session_id = request.session_id or f"session-{int(time.time()) % 10000}"
+        
+        response = await user_agent_instance.process_query(request.query, session_id)
         return AgentResponse(
             response=response,
             success=True,
             agent="userAgent",
-            session_id=request.session_id
+            session_id=session_id
         )
     except Exception as e:
         return AgentResponse(
@@ -147,14 +151,16 @@ async def test_user_agent():
     ]
     
     results = []
+    test_session_id = f"test-session-{int(time.time())}"
+    
     for query in test_queries:
         try:
-            response = await user_agent_instance.process_query(query)
+            response = await user_agent_instance.process_query(query, test_session_id)
             results.append({"query": query, "response": response, "success": True})
         except Exception as e:
             results.append({"query": query, "error": str(e), "success": False})
     
-    return {"test_results": results}
+    return {"test_results": results, "session_id": test_session_id}
 
 if __name__ == "__main__":
     import uvicorn
