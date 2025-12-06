@@ -3,39 +3,203 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="AI-powered Web3 assistant for blockchain operations">
-    <title>Web3 Toolbox Agent</title>
+    <meta name="description" content="Tooly · Powered by SpoonOS — instrument agents with drop-in Web3 execution, data, and telemetry.">
+    <title>Tooly · Powered by SpoonOS</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
     <!-- Skip to main content for accessibility -->
     <a href="#main-content" class="skip-link">Skip to main content</a>
-    
+
+    <!-- Ambient animation layers -->
+    <div class="intro-veil" aria-hidden="true">
+        <span class="intro-veil__beam"></span>
+        <span class="intro-veil__beam delay-1"></span>
+        <span class="intro-veil__beam delay-2"></span>
+    </div>
+    <div class="halo halo-top" aria-hidden="true"></div>
+    <div class="halo halo-bottom" aria-hidden="true"></div>
+    <div class="orb orb-left" aria-hidden="true"></div>
+    <div class="orb orb-right" aria-hidden="true"></div>
+
     <main id="main-content" role="main">
         <div class="container">
-            <header class="page-header">
-                <h1>Web3 Toolbox Agent</h1>
-                <p class="subtitle">AI-powered Web3 assistant. Natural language to blockchain execution.</p>
+            <header class="hero hero-minimal">
+                <p class="eyebrow">Tooly · Web3 native tool-calling agent</p>
+                <h1>Give every agent Web3 superpowers.</h1>
+                <p class="lead">Tooly is a fine-tuned SpoonOS agent that captures intent, reads on-chain data, and executes transactions without forcing teams to write brittle Web3 code.</p>
+                <div class="hero-actions">
+                    <a href="playground.html" class="btn primary" aria-label="Launch interactive playground">Launch Playground</a>
+                    <a href="#why" class="btn secondary" aria-label="Learn why teams choose Tooly">Why Tooly</a>
+                </div>
+                <div class="hero-summary">
+                    <div>
+                        <p class="muted-label">Problem</p>
+                        <p>Agent teams lose weeks building, securing, and debugging Web3 tools.</p>
+                    </div>
+                    <div>
+                        <p class="muted-label">Solution</p>
+                        <p>Drop-in Tooly agent handles intent routing, chain data, and execution.</p>
+                    </div>
+                    <div>
+                        <p class="muted-label">Outcome</p>
+                        <p>Ship Web3 use cases in days, not sprints, with SpoonOS reliability.</p>
+                    </div>
+                </div>
             </header>
 
-            <section class="info-section" aria-labelledby="info-heading">
-                <h2 id="info-heading" class="visually-hidden">Features</h2>
-                <div class="info-grid">
-                    <article class="info-card">
-                        <h3>What it does</h3>
-                        <p>Converts natural language queries into Web3 operations. Check balances, estimate gas, view transactions, interact with smart contracts.</p>
+            <section class="section deck-section" id="problem" aria-labelledby="problem-heading">
+                <div class="section-heading">
+                    <p class="eyebrow">Problem</p>
+                    <h2 id="problem-heading">Web3 agents are costly to build.</h2>
+                </div>
+                <div class="deck-card">
+                    <ul class="bullet-list" role="list">
+                        <li>Agent devs burn cycles wiring RPCs, ABIs, and indexing stacks.</li>
+                        <li>Every chain integration introduces fragile surface area.</li>
+                        <li>Verification and telemetry are bolted on, not designed in.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="section deck-section" id="solution" aria-labelledby="solution-heading">
+                <div class="section-heading">
+                    <p class="eyebrow">Solution</p>
+                    <h2 id="solution-heading">Tooly manages Web3 intent end to end.</h2>
+                </div>
+                <div class="deck-grid">
+                    <article class="deck-card">
+                        <h3>Capture intent</h3>
+                        <p>LangGraph agent interprets user goals and classifies chain, token, and risk posture instantly.</p>
                     </article>
-                    <article class="info-card">
-                        <h3>How it works</h3>
-                        <p>Dual-agent architecture. Claude 3.5 handles intent classification. SpoonOS executes blockchain operations.</p>
+                    <article class="deck-card">
+                        <h3>Provide context</h3>
+                        <p>Tooly fetches balances, price signals, GitHub intel, and infra health via managed SpoonOS tools.</p>
                     </article>
-                    <article class="info-card">
-                        <h3>Try it</h3>
-                        <p><a href="playground.html" class="cta-link">Open Playground <span aria-hidden="true">→</span></a></p>
+                    <article class="deck-card">
+                        <h3>Execute instructions</h3>
+                        <p>Swaps, transfers, bridging, and reporting are staged with signable payloads and audit logs.</p>
                     </article>
+                </div>
+            </section>
+
+            <section class="section deck-section" id="architecture" aria-labelledby="architecture-heading">
+                <div class="section-heading">
+                    <p class="eyebrow">System Architecture</p>
+                    <h2 id="architecture-heading">LangGraph + SpoonOS runtime.</h2>
+                </div>
+                    <div class="deck-grid">
+                        <article class="deck-card">
+                            <p class="muted-label">1 · Intent graph</p>
+                            <p>LangGraph agent routes requests across sensing, planning, and execution nodes.</p>
+                        </article>
+                        <article class="deck-card">
+                            <p class="muted-label">2 · Tool orchestration</p>
+                            <p>SpoonOS manages 24 tools across price, analytics, swaps, GitHub, and infra.</p>
+                        </article>
+                        <article class="deck-card">
+                            <p class="muted-label">3 · Output surfaces</p>
+                            <p>Return JSON for apps, components for UI, or ready-to-sign transactions.</p>
+                        </article>
+                    </div>
+            </section>
+
+            <section class="section deck-section" id="why" aria-labelledby="why-heading">
+                <div class="section-heading">
+                    <p class="eyebrow">Why Tooly AI</p>
+                    <h2 id="why-heading">Embed once, enable Web3 everywhere.</h2>
+                </div>
+                <div class="deck-grid">
+                    <article class="deck-card">
+                        <h3>Embeddable component</h3>
+                        <p>Tooly drops into any agent UX as a supplementary panel or inline widget.</p>
+                    </article>
+                    <article class="deck-card">
+                        <h3>Native tool calling</h3>
+                        <p>Expose your own tools and Tooly will route to them alongside SpoonOS kits.</p>
+                    </article>
+                    <article class="deck-card">
+                        <h3>Deterministic ops</h3>
+                        <p>Verifiable plans, confidence scores, and live telemetry keep humans in control.</p>
+                    </article>
+                </div>
+                <div class="embed-callout">
+                    <p class="muted-label">Example embed</p>
+                    <div class="embed-inline">
+                        <div>
+                            <p>“Stake 5 ETH from treasury and report APY.”</p>
+                            <p class="muted-label">Intent → treasury_stake_flow (0.94)</p>
+                        </div>
+                        <pre aria-label="Embed snippet"><code>&lt;ToolyWidget
+  agent="langgraph-demo"
+  mode="inline"
+  onIntent={sendToOps}
+/&gt;</code></pre>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section deck-section" id="spoonos" aria-labelledby="spoonos-heading">
+                <div class="section-heading">
+                    <p class="eyebrow">Use of SpoonOS</p>
+                    <h2 id="spoonos-heading">Built entirely on SpoonOS.</h2>
+                    <p class="section-lead">24 managed tools · 5 domains</p>
+                </div>
+                <div class="deck-grid stats-grid">
+                    <article class="deck-card">
+                        <h3>Market intelligence</h3>
+                        <p>Real-time price monitoring plus DEX/CEX analytics keep swaps efficient.</p>
+                    </article>
+                    <article class="deck-card">
+                        <h3>Execution</h3>
+                        <p>EVM swaps, bridging, token transfers, and gas estimation handled for you.</p>
+                    </article>
+                    <article class="deck-card">
+                        <h3>Context inputs</h3>
+                        <p>GitHub activity tracking, infra health, and risk scores feed every response.</p>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section deck-section" id="team" aria-labelledby="team-heading">
+                <div class="section-heading">
+                    <p class="eyebrow">Team</p>
+                    <h2 id="team-heading">Operators building for operators.</h2>
+                </div>
+                <div class="team-grid">
+                    <article class="team-card">
+                        <h3>Jianian Zheng</h3>
+                        <a href="https://github.com/JZ1101" target="_blank" rel="noreferrer">github.com/JZ1101</a>
+                    </article>
+                    <article class="team-card">
+                        <h3>Shiran Yu</h3>
+                        <a href="https://github.com/yushiran" target="_blank" rel="noreferrer">github.com/yushiran</a>
+                    </article>
+                </div>
+            </section>
+
+            <section class="section callout" aria-labelledby="callout-heading">
+                <div class="callout-card">
+                    <div>
+                        <p class="eyebrow">Ready when you are</p>
+                        <h2 id="callout-heading">Ship the Web3 co-pilot your users deserve.</h2>
+                        <p>Spin up the playground, wire in your RPC keys, and watch the agent handle the rest.</p>
+                    </div>
+                    <a href="playground.html" class="btn tertiary" aria-label="Open playground">Open playground</a>
                 </div>
             </section>
         </div>
     </main>
+
+    <footer class="site-footer">
+        <p>Tooly · Powered by SpoonOS</p>
+        <p>Give every agent Web3 superpowers.</p>
+    </footer>
+
+    <script>
+        window.addEventListener('DOMContentLoaded', () => {
+            document.body.classList.add('page-loaded');
+        });
+    </script>
 </body>
 </html>

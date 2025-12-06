@@ -49,7 +49,8 @@ class Web3Playground {
     }
     
     updateStatus(status, text) {
-        this.statusIndicator.className = `status-indicator ${status}`;
+        if (!this.statusIndicator) return;
+        this.statusIndicator.className = `status-pill ${status}`;
         this.statusIndicator.textContent = text;
     }
     
